@@ -5,7 +5,6 @@ export default function createIteratorObject(report) {
       yield* department;
     }
   }
-
   return {
     [Symbol.iterator]: iterateEmployees
   };
