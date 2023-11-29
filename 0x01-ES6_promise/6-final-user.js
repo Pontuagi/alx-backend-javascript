@@ -8,7 +8,7 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
   ];
 
   const statuses = promises.map((promise) => promise
-    .then((value) => ({ status: 'fulfilled', value }))
+    .then((value) => ({ status: 'fulfilled', value: value }))
     .catch((error) => ({ status: 'rejected', value: error })));
 
   return Promise.all(statuses);
