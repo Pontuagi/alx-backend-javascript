@@ -6,6 +6,6 @@ export default function createIteratorObject(report) {
     }
   }
   return {
-    [Symbol.iterator]: iterateEmployees
+    [Symbol.iterator]: iterateEmployees,
   };
 }
