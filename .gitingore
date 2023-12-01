@@ -1,0 +1,5 @@
+# files to be ignored
+
+package.json
+babel.config.js
+.eslintrc.js
