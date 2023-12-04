@@ -6,7 +6,7 @@
 - Typed arrays
 - The Set, Map, and Weak link data structures
 
-## ___Tasks___
+## __Tasks__
 
 ### 0-get_list_students.js
 
