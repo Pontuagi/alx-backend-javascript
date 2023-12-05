@@ -1,15 +1,15 @@
 export default function cleanSet(set, startString) {
-  if (startString.trim() === '') {
+   if (startString === '') {
     return '';
   }
 
-  const filteredValues = Array.from(set)
-    .filter((value) => value.startsWith(startString))
-    .map((value) => value.slice(startString.length));
+  let valuesStartingWith = [];
 
-  if (startString === '') {
-    return Array.from(set).join('-');
-  }
+  set.forEach((value) => {
+    if (value.startsWith(startString)) {
+      valuesStartingWith.push(value.slice(startString.length));
+    }
+  });
 
-  return filteredValues.join('-');
+  return valuesStartingWith.join('-');
 }
