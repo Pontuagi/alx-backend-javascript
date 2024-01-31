@@ -1,0 +1,10 @@
+#!/usr/bin/node
+
+/**
+ * module containing a function that prints to STDOUT the string argument
+ */
+function displayMessage(message) {
+  console.log(message);
+}
+
+module.exports = displayMessage;
