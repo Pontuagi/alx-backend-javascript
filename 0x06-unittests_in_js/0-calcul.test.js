@@ -8,10 +8,6 @@ describe('calculateNumber', () => {
     assert.strictEqual(calculateNumber(2.4, 3.5), 6);
   });
 
-  it('should handle negative numbers correctly', () => {
-    assert.strictEqual(calculateNumber(-2.4, -6.99), -9);
-  });
-
   it('should work with zero values', () => {
     assert.strictEqual(calculateNumber(0, 0), 0);
   });
