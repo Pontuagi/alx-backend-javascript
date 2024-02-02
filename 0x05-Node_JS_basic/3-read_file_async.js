@@ -20,7 +20,7 @@ function countStudents(path) {
       const fieldCounts = {};
 
       rows.forEach((row) => {
-        const [firstname, lastname, age, field] = row.split(',');
+        const [firstname, , , field] = row.split(',');
         if (!fieldCounts[field]) {
           fieldCounts[field] = {
             count: 0,
@@ -28,13 +28,15 @@ function countStudents(path) {
           };
         }
 
-        fieldCounts[field].count++;
+        fieldCounts[field].count += 1;
         fieldCounts[field].list.push(firstname);
       });
 
       for (const field in fieldCounts) {
-        const { count, list } = fieldCounts[field];
-        console.log(`Number of students in ${field}: ${count}. List: ${list.join(', ')}`);
+        if (Object.prototype.hasOwnProperty.call(fieldCounts, field)) {
+          const { count, list } = fieldCounts[field];
+          console.log(`Number of students in ${field}: ${count}. List: ${list.join(', ')}`);
+        }
       }
 
       resolve({
