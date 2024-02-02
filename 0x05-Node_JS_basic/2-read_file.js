@@ -22,7 +22,7 @@ const countStudents = (path) => {
       if (!fields[student[3]]) {
         fields[student[3]] = {
           count: 0,
-          list: []
+          list: [],
         };
       }
       fields[student[3]].count += 1;
