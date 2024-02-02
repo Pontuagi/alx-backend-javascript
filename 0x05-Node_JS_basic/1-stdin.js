@@ -3,22 +3,21 @@
  * It accepts input from the commandline
  * Displays the name provided in input
  */
-const readline = require('readline');
+process.stdout.write('Welcome to Holberton School, what is your name?\n');
 
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
+process.stdin.setEncoding('utf-8');
 
+process.stdin.on('readable', () => {
+  const input = process.stdin.read();
 
-console.log('Welcome to Holberton School, what is your name?');
-
-rl.on('line', (input) => {
-  if (input.trim() !== '') {
-    console.log(`Your name is: ${input}`);
+  if (input !== null) {
+    const name = input.trim();
+    if (name !== '') {
+      process.stdout.write(`Your name is: ${name}\n`);
+    }
   }
 });
 
-rl.on('close', () => {
-  console.log('This important software is now closing');
+process.stdin.on('end', () => {
+  process.stdout.write('This important software is now closing\n');
 });
