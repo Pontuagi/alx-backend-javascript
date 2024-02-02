@@ -1,5 +1,3 @@
-#!/usr/bin/node
-
 /**
  * Module for a program that will be executed through the command line
  * It accepts input from the commandline
@@ -7,7 +5,7 @@
  */
 const readline = require('readline');
 
-const r1 = readline.createInterface({
+const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
 });
@@ -15,10 +13,12 @@ const r1 = readline.createInterface({
 
 console.log('Welcome to Holberton School, what is your name?');
 
-r1.question('', (name) => {
-  console.log(`Your name is: ${name}`);
+rl.on('line', (input) => {
+  if (input.trim() !== '') {
+    console.log(`Your name is: ${input}`);
+  }
+});
 
-  r1.close();
-
+rl.on('close', () => {
   console.log('This important software is now closing');
 });
